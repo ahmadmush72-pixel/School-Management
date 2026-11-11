@@ -12,7 +12,8 @@
   --light-bg: #fff7ed; /* Light peach/orange background */
   --white: #ffffff; /* Pure White */
   --border-color: #e2e8f0; /* Light border gray */
-  --font-family: "Poppins", sans-serif;
+  --font-family: "Open Sans", sans-serif; /* body text */
+  --font-heading: "Montserrat", sans-serif; /* headings */
 }
 
 /* --- 2. GLOBAL RESET & BASE STYLES --- */
@@ -31,6 +32,14 @@ body {
   color: var(--text-gray);
   background-color: var(--white);
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo-text {
+  font-family: var(--font-heading);
 }
 
 a {
