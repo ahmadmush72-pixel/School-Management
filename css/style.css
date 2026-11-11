@@ -367,7 +367,7 @@ ul {
 
 /* --- 5. FEATURES / CORE CAPABILITIES --- */
 .features {
-  background-color: #f8fafc;
+  background-color: #fffaf5; /* very light warm tint */
   padding: 80px 20px 90px;
 }
 
@@ -588,6 +588,116 @@ ul {
   display: inline-block;
 }
 
+/* --- 5C. SERVICES SECTION --- */
+.services {
+  background-color: #f1f5f9; /* light cool gray (different from features) */
+  padding: 80px 20px 90px;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-badge {
+  display: inline-block;
+  background-color: var(--light-bg);
+  color: var(--primary-hover);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.services-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dark-color);
+  line-height: 1.3;
+  max-width: 560px;
+  margin: 0 auto 12px;
+}
+
+.services-desc {
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 520px;
+  margin: 0 auto 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.service-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-4px);
+}
+
+.service-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.service-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background-color: var(--light-bg);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-head h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--dark-color);
+  line-height: 1.3;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-gray);
+  margin-bottom: 16px;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13px;
+  color: var(--dark-color);
+  margin-bottom: 8px;
+}
+
+.service-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
 /* --- 6. RESPONSIVE DESIGN (MOBILE & TABLET) --- */
 @media (max-width: 868px) {
   /* Show Hamburger Icon */
@@ -709,5 +819,44 @@ ul {
   .about-stats {
     gap: 24px;
     flex-wrap: wrap;
+  }
+}
+
+/* --- 7. EXTRA RESPONSIVE RULES (FEATURES & SERVICES) --- */
+/* Laptop / tablet: 2 cards per row */
+@media (max-width: 992px) {
+  .features-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-title,
+  .services-title {
+    font-size: 30px;
+  }
+}
+
+/* Phone: 1 card per row */
+@media (max-width: 600px) {
+  .features,
+  .services,
+  .about {
+    padding: 60px 16px;
+  }
+
+  .features-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-title,
+  .services-title {
+    font-size: 24px;
+  }
+
+  .features-desc,
+  .services-desc {
+    font-size: 14px;
+    margin-bottom: 35px;
   }
 }
